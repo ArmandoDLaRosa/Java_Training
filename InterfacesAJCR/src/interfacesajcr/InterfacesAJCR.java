@@ -22,9 +22,9 @@ public class InterfacesAJCR
         //    → Piloto
         //    → Desarrollador
         //    → Cocinero
-        Piloto  instanciaPiloto =  new Piloto("Armando De La Rosa", "23233");
+        Piloto  instanciaPiloto =  new Piloto("Armando De La Rosa", "13");
         Desarrollador instanciaDesarrollador = new Desarrollador("Eduardo Cruz", "32322");
-        Cocinero instanciaCocinero = new Cocinero("Felipe Fuentes", "23232");
+        Cocinero instanciaCocinero = new Cocinero("Felipe Fuentes", "15000");
         
         // -----------
         // TEST
@@ -48,36 +48,55 @@ public class InterfacesAJCR
                     // PILOTO
                     System.out.println("\n\nPILOTO ----------------");
                     System.out.println("\nPiloto, encenderObjeto() ");
-                    instanciaPiloto.encenderObjeto();
+                    encenderI(instanciaPiloto);
                     System.out.println("\nPiloto, maniobrarObjeto()");
-                    instanciaPiloto.maniobrarObjeto();
+                    maniobrarI(instanciaPiloto);
                     System.out.println("\nPiloto, apagarObjeto()   ");
-                    instanciaPiloto.apagarObjeto();
+                    apagarI(instanciaPiloto);
                     break;
 
                 case 2:
                     // DESARROLLADOR
                     System.out.println("\n\nDESARROLLADOR ----------------");
                     System.out.println("\nDesarrollador, encenderObjeto() ");
-                    instanciaDesarrollador.encenderObjeto();
+                    encenderI(instanciaDesarrollador);
                     System.out.println("\nDesarrollador, maniobrarObjeto()");
-                    instanciaDesarrollador.maniobrarObjeto();
+                    maniobrarI(instanciaDesarrollador);
                     System.out.println("\nDesarrollador, apagarObjeto()   ");
-                    instanciaDesarrollador.apagarObjeto();                    
+                    apagarI(instanciaDesarrollador);
                     break;
 
                 case 3:
                     // COCINERO
                     System.out.println("\n\nCOCINERO ----------------");
                     System.out.println("\nCocinero, encenderObjeto() ");
-                    instanciaCocinero.encenderObjeto();
+                    encenderI(instanciaCocinero);
                     System.out.println("\nCocinero, maniobrarObjeto()");
-                    instanciaCocinero.maniobrarObjeto();
+                    maniobrarI(instanciaCocinero);
                     System.out.println("\nCocinero, apagarObjeto()   ");
-                    instanciaCocinero.apagarObjeto();
+                    apagarI(instanciaCocinero);
                     break;
                     
             }    
         } while (respuesta != 0 );
+            
     }
+    
+    // -----------------------------
+    // VALIDAR QUE INTERFAZ FUNCIONE
+    // -----------------------------
+    public static void encenderI(Interfaz instancia)
+    {
+        instancia.encenderObjeto();
+    }
+    
+    public static void maniobrarI(Interfaz instancia)
+    {
+        instancia.maniobrarObjeto();
+    }
+    
+    public static void apagarI(Interfaz instancia)
+    {
+        instancia.apagarObjeto();
+    }   
 }
