@@ -19,15 +19,19 @@ Simple codes to Practice OOP in JAVA.
 * ##### EVIDENCIA 4
   [Source Folder](https://github.com/ArmandoDLaRosa/Java_OOPcodes/tree/main/Evidencia_4/src/evidencia_4)
 
+  Code to practice classes' constructors(), methods(), sets() and gets(). 
 
 * ##### EVIDENCIA 5
   [Source Folder](https://github.com/ArmandoDLaRosa/Java_OOPcodes/tree/main/Evidencia_5/src/evidencia_05)
 
+  Code to practice exceptions, customized exceptions and throw. 
 
 * ##### EVIDENCIA 6 → Folder called "ArchivosAJCR"
   [Source Folder](https://github.com/ArmandoDLaRosa/Java_OOPcodes/tree/main/ArchivosAJCR/src/archivosajcr)
 
+  Code to practice string manipulation, creating and writting files. 
 
 * ##### EVIDENCIA 7 → Folder called "InterfacesAJCR"
   [Source Folder](https://github.com/ArmandoDLaRosa/Java_OOPcodes/tree/main/InterfacesAJCR/src/interfacesajcr)
 
+  Code to practice Interfaces. 
