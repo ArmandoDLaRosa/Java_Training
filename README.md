@@ -1,4 +1,4 @@
-# Java_OOPcodes
+# Java_Training
 Training by CDIS, before entering the company's projects.
 
   * ##### EVIDENCIA 1
