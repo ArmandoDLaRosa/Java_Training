@@ -1,5 +1,5 @@
 # Java_OOPcodes
-Simple codes to Practice OOP in JAVA.
+Training by CDIS, before entering the company's projects.
 
   * ##### EVIDENCIA 1
     [Source Folder](https://github.com/ArmandoDLaRosa/Java_OOPcodes/tree/main/Evidencia_1/src/evidencia_1)
