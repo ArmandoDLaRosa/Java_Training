@@ -39,4 +39,4 @@ Training by CDIS, before entering the company's projects.
   * ##### EVIDENCIA FINAL → Folder called "evidencia8"
     [Source Folder](https://github.com/ArmandoDLaRosa/Java_Training/tree/main/evidencia8)
 
-    Code to practice JAVA EE WEB | SERVER: Payara DB: H2 JSF y PrimeFaces
+    Code to practice JAVA EE WEB | SERVER: Payara | DB: H2 | JSF y PrimeFaces
