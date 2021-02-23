@@ -1,0 +1,91 @@
+<ui:composition template="./../resources/template2.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name = "title">
+	Vuelos List
+    </ui:define>
+    
+    <ui:define name = "top">
+        <h1 style = "font-family: 'Courier New'">VUELOS</h1>
+    </ui:define>
+
+    <ui:define name = "messages">                
+	    <h:messages id="mensajes" showDetail="false" errorStyle="color:red" infoStyle="color:blue"/>
+    </ui:define>       
+
+    <ui:define name = "tableTitle">
+        <br></br>
+        <h2 style = "font-family: 'Courier New'">Tabla</h2>
+    </ui:define>
+
+    <ui:define name = "back">                
+                <h:commandButton value = "🔙&#160;REGRESAR" action = "#{vuelosController.mainClean('/menu')}" styleClass ="botones"/>
+</ui:define>      
+
+    <ui:define name = "buttons">                
+        <br/> <br/>
+                 <h:commandButton value = "🆕&#160;NUEVO DATO" action = "#{vuelosController.mainClean('VuelosAlta')}" styleClass ="botones"/>                
+</ui:define>    
+
+
+    <ui:define name = "table">
+                <h:dataTable value = "#{vuelosController.findAllTyped()}" var = "itemV" border =  "5" styleClass ="tablas">
+                    <h:column>
+                        <f:facet name = "header">Número De Vuelo</f:facet>
+                        #{itemV.numeroDeVuelo}
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Número de Avión</f:facet>
+                        #{itemV.numeroDeAvion.numeroDeAvion}
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Origen</f:facet>
+                        #{itemV.origen.nombre}
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Destino</f:facet>
+                        #{itemV.destino.nombre}
+                    </h:column>                      
+                    <h:column>
+                        <f:facet name = "header">Fecha De Inicio de Vuelo</f:facet>
+                        <h:outputText value = "#{itemV.fechaInicioDeVuelo}">
+                            <f:convertDateTime type = "date" pattern = "dd/MM/yyyy" timeZone ="UTC-5"/>
+                        </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Fecha De Fin de Vuelo</f:facet>
+                        <h:outputText value = "#{itemV.fechaFinDeVuelo}">
+                            <f:convertDateTime type = "date" pattern = "dd/MM/yyyy" timeZone ="UTC-5"/>
+                        </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Hora De Inicio de Vuelo</f:facet>
+                        <h:outputText value = "#{itemV.horaInicioDeVuelo}">
+                            <f:convertDateTime type="time" pattern="HH:mm" timeZone="GMT-6"/>
+                        </h:outputText>                    
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Hora De Fin de Vuelo</f:facet>
+                        <h:outputText value = "#{itemV.horaFinDeVuelo}">
+                            <f:convertDateTime type="time" pattern="HH:mm" timeZone="GMT-6"/>
+                        </h:outputText>                       
+                    </h:column>              
+                    <h:column rendered="#{loginController.authorized}">
+                        <f:facet name = "header">Editar</f:facet>
+                        <h:commandButton value = "✏️&#160;EDITAR" action = "#{vuelosController.prepareEdit(itemV)}" styleClass ="botonesTabla"/>
+                    </h:column>                       
+                    <h:column rendered="#{loginController.authorized}">
+                        <f:facet name = "header">Eliminar</f:facet>
+                        <h:commandButton value = "❌&#160;ELIMINAR" action = "#{vuelosController.prepareDelete()}" rendered="#{!vuelosController.confirm}" styleClass ="botonesTabla"/>
+                        <h:commandButton value = "✅️&#160;CONFIRMO" action = "#{vuelosController.delete(itemV)}" rendered="#{vuelosController.confirm}" styleClass ="botonesConfirmar"/>
+                        <h:commandButton value = "🚫️&#160;CANCELAR" action = "#{vuelosController.mainClean('VuelosList')}" rendered="#{vuelosController.confirm}" styleClass ="botonesCancelar"/>
+                    </h:column>  
+                </h:dataTable>  
+    </ui:define>       
+
+</ui:composition>
+
+

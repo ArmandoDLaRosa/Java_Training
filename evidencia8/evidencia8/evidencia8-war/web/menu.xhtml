@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">  
+    <h:head>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+        <title>Aeropuerto MTY</title>
+        <meta http-equiv="Content-Type" content="text/html; charset-UTF-S"/>        
+        <h:outputStylesheet name="/css/cssLayout.css"/>        
+    </h:head>
+    <h:body >
+        <div id = "frame">
+            <div id ="containerCenterNoBackground" >
+                <h:graphicImage style="object-fit: cover; width: 400px; height:160px" library="images" name="LOGO.png"/>
+                <h1>️#{menuController.darBienvenida()}</h1>              
+            </div>
+            <div align = "right">
+                <h:form>
+                    <a href="#bottom" >
+                        Go To Bottom
+                    </a> 
+                    <br/><br/>
+                    <h:commandButton value = "📴&nbsp;LOG OUT" action = "#{loginController.mainClean('/index')}" styleClass="botonesInicio"/>
+                </h:form>
+            </div>    
+            <h2>TABLAS</h2>
+            <div  align = "justify" style="margin-top: 5px; margin-bottom: 5px; background-color: #F8F8F8; padding: 20px">
+                <h:form>
+                    <h2 >👨‍️ VUELOS</h2>
+                    <h3>Typed Query</h3>
+                    <ul >
+                        <c:forEach items="#{vuelosController.findAllTyped()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>
+                    <h3>Named Query</h3>
+                    <ul >
+                        <c:forEach items="#{vuelosController.findAllNamed()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>  
+
+                    <br></br>
+                    <h2>✈️ AVIONES</h2>
+                    <h3>Typed Query</h3>
+                    <ul >
+                        <c:forEach items="#{avionesController.findAllTyped()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>
+                    <h3>Named Query</h3>
+                    <ul >
+                        <c:forEach items="#{avionesController.findAllNamed()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>    
+
+                    <br></br>
+                    <h2>📍️ CIUDADES</h2>
+                    <h3>Typed Query</h3>
+                    <ul >
+                        <c:forEach items="#{ciudadesController.findAllTyped()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>
+                    <h3>Named Query</h3>
+                    <ul >
+                        <c:forEach items="#{ciudadesController.findAllNamed()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>  
+                    <br></br>
+                    <h2>🏙️️️ ESTADOS</h2>
+                    <h3>Typed Query</h3>
+                    <ul >
+                        <c:forEach items="#{estadosController.findAllTyped()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>
+                    <h3>Named Query</h3>
+                    <ul >
+                        <c:forEach items="#{estadosController.findAllNamed()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>  
+                    <br></br>
+                    <h2>🗺️️️️ PAÍSES</h2>
+                    <h3>Typed Query</h3>
+                    <ul >
+                        <c:forEach items="#{paisesController.findAllTyped()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>
+                    <h3>Named Query</h3>
+                    <ul >
+                        <c:forEach items="#{paisesController.findAllNamed()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>  
+                </h:form>
+            </div>
+            <br></br>
+            <h2>PARAMETER QUERIES</h2>
+            <div  align = "justify" style="margin-top: 5px; background-color: #F8F8F8; padding: 20px">
+                <h:form>
+                    <br></br>
+                    <h2>TYPED QUERIES</h2>
+                    <br></br>
+                    <h3>👨‍&nbsp;Vuelos | por Número De Vuelo</h3>
+                    <ul >
+                        <c:forEach items="#{vuelosController.findByNumeroDeVuelo()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul> 
+                    <br></br>
+                    <h3>✈&nbsp; Aviones | por Número De Avión</h3>
+                    <ul >
+                        <c:forEach items="#{avionesController.findByNumeroDeAvion()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>                      
+                    <br></br>
+                    <h3>📍&nbsp; Ciudades | por Estado</h3>
+                    <ul >
+                        <c:forEach items="#{ciudadesController.findByEstado()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>                        
+                    <br></br>
+                    <h2>NAMED QUERIES</h2>
+                    <br></br>              
+                    <h3>✈&nbsp; Aviones | por Número De Avión y Capacidad de Pasajeros</h3>
+                    <ul >
+                        <c:forEach items="#{avionesController.findByNumAvionANDCapPasajeros()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>  
+                    <br></br>              
+                    <h3>📍&nbsp; Ciudades | por País</h3>
+                    <ul >
+                        <c:forEach items="#{ciudadesController.findAllByPais()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>                      
+                    <br></br>              
+                    <h3>🗺️️️️&nbsp;Países | por Nombre</h3>
+                    <ul >
+                        <c:forEach items="#{paisesController.findAllByNombre()}" var="item">
+                            <h:outputText value="#{item}"/> 
+                            <br></br>
+                        </c:forEach>
+                    </ul>                         
+                </h:form>
+            </div>
+            <div id="bottom" align = "right">
+                <br></br>                   
+                <a href="#frame" >
+                    Go To Top
+                </a> 
+            </div>
+            <footer id = "containerCenterNoBackground">
+                <h:form>
+                    <h:commandButton value = "👨‍&nbsp;VUELOS" action = "/Vuelos/VuelosList" styleClass="botones"/>
+                    <h:commandButton value = "✈&nbsp; AVIONES" action = "/Aviones/AvionesList" styleClass="botones"/>
+                    <h:commandButton value = "📍&nbsp; CIUDADES" action = "/Ciudades/CiudadesList" styleClass="botones"/>
+                    <h:commandButton value = "🏙&nbsp; ESTADOS" action = "/Estados/EstadosList" styleClass="botones"/>
+                    <h:commandButton value = "🗺️️️️&nbsp;PAÍSES" action = "/Paises/PaisesList" styleClass="botones"/>
+                    <h:commandButton value = "🙂️️️️&nbsp;USUARIOS" action = "/Usuarios/UsuariosList" styleClass="botones"/>
+                </h:form>
+            </footer>
+        </div>
+    </h:body>
+</html>

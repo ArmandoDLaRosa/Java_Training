@@ -1,0 +1,67 @@
+<ui:composition template="./../resources/template2.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name = "title">
+	Aviones List
+    </ui:define>
+    
+    <ui:define name = "top">
+        <h1 style = "font-family: 'Courier New'">AVIONES</h1>
+    </ui:define>
+
+    <ui:define name = "messages">                
+	    <h:messages id="mensajes" showDetail="false" errorStyle="color:red" infoStyle="color:blue"/>
+    </ui:define>       
+
+    <ui:define name = "tableTitle">
+        <br></br>
+        <h2 style = "font-family: 'Courier New'">Tabla</h2>
+    </ui:define>
+
+    <ui:define name = "back">                
+                <h:commandButton value = "🔙&#160;REGRESAR" action = "#{avionesController.mainClean('/menu')}" styleClass ="botones"/>
+</ui:define>      
+
+    <ui:define name = "buttons">                
+        <br/> <br/>
+                 <h:commandButton value = "🆕&#160;NUEVO DATO" action = "#{avionesController.mainClean('AvionesAlta')}" styleClass ="botones"/>                
+</ui:define>    
+
+
+    <ui:define name = "table">
+                <h:dataTable value = "#{avionesController.findAllTyped()}" var = "itemA" border =  "5" styleClass ="tablas">
+                    <h:column>
+                        <f:facet name = "header">Número De Avión</f:facet>
+                        #{itemA.numeroDeAvion}
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Capacidad de pasajeros</f:facet>
+                        #{itemA.capacidadDePasajeros}
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Modelo</f:facet>
+                        #{itemA.modelo}
+                    </h:column>
+                    <h:column>
+                        <f:facet name = "header">Aerolínea</f:facet>
+                        #{itemA.aerolinea}
+                    </h:column>              
+                    <h:column  rendered="#{loginController.authorized}">
+                        <f:facet name = "header">Editar</f:facet>
+                        <h:commandButton value = "✏&#160;EDITAR" action = "#{avionesController.prepareEdit(itemA)}" styleClass ="botonesTabla"/>
+                    </h:column>                       
+                    <h:column  rendered="#{loginController.authorized}">
+                        <f:facet name = "header">Eliminar</f:facet>
+                        <h:commandButton value = "❌&#160;ELIMINAR" action = "#{avionesController.prepareDelete()}" rendered="#{!avionesController.confirm}" styleClass ="botonesTabla"/>
+                        <h:commandButton value = "✅&#160;CONFIRMO" action = "#{avionesController.delete(itemA)}" rendered="#{avionesController.confirm}" styleClass ="botonesConfirmar"/>
+                        <h:commandButton value = "🚫&#160;CANCELAR" action = "#{avionesController.mainClean('AvionesList')}" rendered="#{avionesController.confirm}" styleClass ="botonesCancelar"/>
+                    </h:column>  
+                </h:dataTable>  
+    </ui:define>       
+
+</ui:composition>
+
+

@@ -1,0 +1,78 @@
+<ui:composition template="./../resources/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name = "title">
+	Usuarios Alta
+    </ui:define>
+    
+    <ui:define name = "top">
+        <h1 style = "font-family: 'Courier New'">REGISTRAR USUARIOS</h1>
+    </ui:define>
+
+    <ui:define name = "tableTitle">
+        <br></br>
+        <h2 style = "font-family: 'Courier New'">Forms para Registro</h2>
+    </ui:define>
+
+    <ui:define name = "dataFieldLeft">
+	<h:outputText value ="Nombre: " styleClass ="Outputs"/>
+                <h:inputText value ="#{usuariosController.usuario.nombre}"
+                             maxlength="50"
+                             required="true"
+                             requiredMessage="Ingresar el Nombre del Usuario"
+                             styleClass ="Inputs"/>
+                <br/>
+                <h:outputText value ="Email: " styleClass ="Outputs"/>
+                <h:inputText value ="#{usuariosController.usuario.email}" 
+                             maxlength="60"
+                             validator = "correoValidator"
+                             validatorMessage="El correo no sigue el formato ____@___.__"
+                             required="true"
+                             requiredMessage="Ingrese un email"
+                             styleClass ="Inputs"/>
+                <br/>
+    </ui:define>       
+
+    <ui:define name = "dataFieldCenter">        
+                <h:outputText value ="Contraseña: " styleClass ="Outputs"/>
+                <h:inputText value ="#{usuariosController.usuario.contraseña}"
+                             maxlength="30"
+                             required="true"
+                             requiredMessage="Ingresar la Contraseña del Usuario"                                                     
+                             styleClass ="Inputs"/>
+                <br/> 
+    </ui:define>       
+
+    <ui:define name = "dataFieldRight">        
+                <h:outputText value ="Perfil: " styleClass ="Outputs"/>
+                <h:selectOneMenu value="#{usuariosController.usuario.perfil}"
+                                 required="true"
+                                 requiredMessage="Ingresar el Perfil del Usuario"                                                     
+                                 styleClass ="Inputs">
+                        <f:selectItem itemValue="0" itemLabel="Ningun Perfil" />
+                        <f:selectItem itemValue="1" itemLabel="Gerente" />
+                        <f:selectItem itemValue="2" itemLabel="Piloto" />
+                        <f:selectItem itemValue="3" itemLabel="Director" />
+                </h:selectOneMenu>
+    </ui:define>       
+
+    <ui:define name = "buttons">                
+        <br/> <br/>
+                <h:commandButton value = "🆕&#160;AGREGAR REGISTRO" action = "#{usuariosController.insert()}" styleClass="botones"/>            
+    </ui:define>    
+
+    <ui:define name = "back">                
+                <h:commandButton value = "🔙&#160;REGRESAR" action = "UsuariosList" styleClass="botones"/>    
+
+    </ui:define>      
+
+    <ui:define name = "messages">                
+	    <h:messages id="mensajes" showDetail="false" errorStyle="color:red" infoStyle="color:blue"/>
+    </ui:define>       
+
+</ui:composition>
+
+

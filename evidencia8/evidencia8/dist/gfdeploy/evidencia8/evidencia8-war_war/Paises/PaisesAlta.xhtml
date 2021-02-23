@@ -1,0 +1,52 @@
+<ui:composition template="./../resources/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name = "title">
+	Paises Alta
+    </ui:define>
+    
+    <ui:define name = "top">
+        <h1 style = "font-family: 'Courier New'">REGISTRAR PAÍSES</h1>
+    </ui:define>
+
+    <ui:define name = "tableTitle">
+        <br></br>
+        <h2 style = "font-family: 'Courier New'">Forms para Registro</h2>
+    </ui:define>
+
+    <ui:define name = "dataFieldLeft">
+ 	<h:outputText value ="Nombre del País: " styleClass ="Outputs"/>
+                <h:inputText value ="#{paisesController.pais.nombre}"  
+                             maxlength="35"
+                             validator = "nombresValidator"
+                             validatorMessage="Error en Nombre del País, ingrese un nombre de letras"
+                             required="true"
+                             requiredMessage="Ingrese el nombre del país"                             
+                             styleClass ="Inputs"/>   
+    </ui:define>       
+
+    <ui:define name = "dataFieldCenter">        
+    </ui:define>       
+
+    <ui:define name = "dataFieldRight">        
+    </ui:define>       
+
+    <ui:define name = "buttons">                
+        <br/> <br/>
+                <h:commandButton value = "🆕&#160;AGREGAR REGISTRO" action = "#{paisesController.insert()}" styleClass="botones"/>    
+    </ui:define>    
+
+    <ui:define name = "back">                
+                <h:commandButton value = "🔙&#160;REGRESAR" action = "PaisesList" styleClass="botones"/>            
+    </ui:define>      
+
+    <ui:define name = "messages">                
+	    <h:messages id="mensajes" showDetail="false" errorStyle="color:red" infoStyle="color:blue"/>
+    </ui:define>       
+
+</ui:composition>
+
+

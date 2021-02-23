@@ -1,0 +1,195 @@
+#logoHead{
+    object-fit: cover; 
+    width: 400px; 
+    height:160px
+} 
+
+#frame{
+    margin: 2%; 
+    padding: 1.5%
+}
+
+#buttonArea{
+    margin-bottom: 3%; 
+}
+
+#left, #center, #right{
+        margin-bottom: 3%;
+        margin-top: 3%
+}
+#containerLeft{
+    width:600px; 
+    margin: 0 auto; 
+    text-align: left; 
+    margin-top: 35px;    
+    margin-bottom: 5px;     
+}
+#containerLeft> * { margin: 0 auto; }
+
+#containerLeftTabla{
+    width:100%; 
+    margin: 0 auto; 
+    text-align: left; 
+    margin-top: 10px;    
+    margin-bottom: 5px;     
+}
+#containerLeftTabla> * { margin: 0 auto; }
+
+#containerCenter{
+    width:600px; 
+    margin: 0 auto; 
+    text-align: center; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    background-color: #F8F8F8; 
+    padding: 20px;
+}
+#containerCenter> * { margin: 0 auto; }
+
+#containerCenterNoBackground{
+    width:600px; 
+    margin: 0 auto; 
+    font-size:0.675;    
+    text-align: center; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+}
+#containerCenterNoBackground> * { margin: 0 auto; }
+
+#containerCenterTabla{
+    width:100%; 
+    margin: 0 auto; 
+    text-align: center; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    background-color: #F8F8F8; 
+    padding: 20px;
+    overflow: auto;
+}
+#containerCenterTabla> * { margin: 0 auto; }
+
+h1,h2,h3, ul{
+    font-family: 'Courier New';
+}
+
+a:link, a:visited {
+  font-family: 'Courier New';    
+  background-color: #6699cc;;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #538cc6;
+  font-family: 'Courier New'  
+}
+
+.botonesInicio:hover{
+  background-color: #538cc6;
+  font-family: 'Courier New'  
+}
+
+.botonesInicio {
+  font-family: 'Courier New';
+  background-color: #6699cc;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  border: none;  
+  display: inline-block;
+}
+
+.tablas, table {
+    table-layout:fixed;
+    width:99.9%;
+    font-family: 'Courier New'; 
+    font-size:0.575;   
+    align-items: center;   
+    border: none;
+    border-collapse: collapse;
+    border-color: 	#dddddd;
+}
+
+tr:hover{background-color: #eeeeee; }
+
+.Outputs{
+    font-family: 'Courier New';         
+    display: inline-block; 
+    text-align: left; 
+    width: 250px;
+}
+
+.Inputs{
+    font-family: 'Courier New';     
+    box-sizing: 
+    border-box; resize: 
+    vertical; width: 200px; 
+    border: .25px solid #aaa;
+}
+
+.botones{
+    font-family: 'Courier New'; 
+    cursor: pointer; margin: 10px; 
+    padding: 15px 15px 15px; 
+    border: .25px solid #aaa
+}
+
+.botones:hover{
+    font-family: 'Courier New'; 
+    cursor: pointer; margin: 10px; 
+    padding: 15px 15px 15px; 
+    border: .25px solid #eeeeee
+}
+
+.botonesConfirmar{
+    font-family: 'Courier New'; 
+    cursor: pointer; margin: 10px;     
+    font-size:0.675;
+    cursor: pointer; 
+    border: .25px solid #4CB26B;
+    max-width: 100%;  
+    align-items: center;
+    justify-content: center;    
+}
+
+.botonesCancelar{
+    font-family: 'Courier New'; 
+    cursor: pointer; margin: 10px;     
+    font-size:0.675;
+    cursor: pointer; 
+    border: .25px solid #B24C58;
+    max-width: 100%;    
+    align-items: center;
+    justify-content: center;       
+}
+
+.botonesTabla {
+    font-family: 'Courier New'; 
+    cursor: pointer; margin: 10px;     
+    font-size:0.675;
+    cursor: pointer; 
+    border: .25px solid #aaa;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;       
+}
+
+.botonesTabla:hover {
+    font-family: 'Courier New'; 
+    cursor: pointer; margin: 10px;     
+    font-size:0.675;
+    cursor: pointer; 
+    border: .25px solid #eeeeee;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;       
+}
+
+body {
+    margin: 3%; 
+    padding: 2.5%
+}

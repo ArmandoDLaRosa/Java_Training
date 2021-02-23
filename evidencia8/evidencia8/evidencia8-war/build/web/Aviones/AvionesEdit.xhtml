@@ -1,0 +1,78 @@
+<ui:composition template="./../resources/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name = "title">
+	Avión Edit
+    </ui:define>
+    
+    <ui:define name = "top">
+        <h1 style = "font-family: 'Courier New'">ACTUALIZACIÓN AVIÓN</h1>
+    </ui:define>
+
+    <ui:define name = "tableTitle">
+        <br></br>
+        <h2 style = "font-family: 'Courier New'">Forms para actualizar avión</h2>
+    </ui:define>
+
+    <ui:define name = "dataFieldLeft">
+	<h:outputText value ="Número De Avión: " styleClass ="Outputs"/>
+                <h:inputText    value ="#{avionesController.avion.numeroDeAvion}" 
+                                maxlength ="20"
+                                validator = "numerosValidator"  
+                                validatorMessage="Error en Número de Avión, en el campo ingresar valores númericos"
+                                required="true"
+                                requiredMessage="Ingrese un número de avión"                                
+                                styleClass ="Inputs"/>
+                <br/>  
+                <h:outputText value ="Capacidad de pasajeros: " styleClass ="Outputs"/>
+                <h:inputText    value ="#{avionesController.avion.capacidadDePasajeros}" 
+                                maxlength="3"
+                                required="true"
+                                requiredMessage="Ingresar la Capacidad de Pasajeros"
+                                converterMessage = "Error en Capacidad de pasajeros, en el campo ingresar valores númericos"
+                                styleClass ="Inputs"/>
+                <br/>
+    </ui:define>       
+
+    <ui:define name = "dataFieldCenter">        
+	<h:outputText value ="Modelo: " styleClass ="Outputs"/>
+                <h:inputText    value ="#{avionesController.avion.modelo}" 
+                                maxlength="25"
+                                validator = "codigoValidator"  
+                                validatorMessage="Error en Modelo, en el campo ingresar valores alfanúmericos"
+                                required="true"
+                                requiredMessage="Ingrese un modelo"                                
+                                styleClass ="Inputs"/>
+                <br/>
+    </ui:define>       
+
+    <ui:define name = "dataFieldRight">        
+                <h:outputText value ="Aerolínea: " styleClass ="Outputs"/>
+                <h:inputText    value ="#{avionesController.avion.aerolinea}" 
+                                maxlength="35"
+                                validator = "palabrasValidator"
+                                validatorMessage="Error en Aerolínea, en el campo ingresar palabras"   
+                                required="true"
+                                requiredMessage="Ingrese una aerolínea"
+                                styleClass ="Inputs"/>
+    </ui:define>       
+
+    <ui:define name = "buttons">                
+        <br/> <br/>
+                <h:commandButton value = "🆕&#160;ACTUALIZAR REGISTRO" action = "#{avionesController.update()}" styleClass="botones"/>    
+  </ui:define>    
+
+    <ui:define name = "back">                
+                <h:commandButton value = "🔙&#160;REGRESAR" action = "AvionesList" styleClass="botones"/>    
+</ui:define>      
+
+    <ui:define name = "messages">                
+	    <h:messages id="mensajes" showDetail="false" errorStyle="color:red" infoStyle="color:blue"/>
+    </ui:define>       
+
+</ui:composition>
+
+
