@@ -37,6 +37,6 @@ Training by CDIS, before entering the company's projects.
     Code to practice Interfaces.
     
   * ##### EVIDENCIA FINAL → Folder called "evidencia8"
-    [Source Folder](https://github.com/ArmandoDLaRosa/Java_OOPcodes/tree/main/InterfacesAJCR/src/interfacesajcr)
+    [Source Folder](https://github.com/ArmandoDLaRosa/Java_Training/tree/main/evidencia8)
 
-    Code to practice java EE Web 
+    Code to practice JAVA EE WEB | SERVER: Payara DB: H2 JSF y PrimeFaces
