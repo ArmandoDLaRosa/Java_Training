@@ -42,5 +42,5 @@ Training by CDIS, before entering the company's projects.
     Code to practice JAVA EE WEB | SERVER: Payara | DB: H2 | JSF y PrimeFaces
 
 ## YOUTUBE SHORT VIDEO
-    [![Click to watch the video on YouTube](https://img.youtube.com/vi/vkSfe08QlOw/0.jpg)](https://www.youtube.com/watch?v=vkSfe08QlOw)
+[![Click to watch the video on YouTube](https://img.youtube.com/vi/vkSfe08QlOw/0.jpg)](https://www.youtube.com/watch?v=vkSfe08QlOw)
 
